@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Allergy Treatment Doctors Don't Want You Waiting For — Because It's Already Here</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,800;1,400;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --serif: 'Playfair Display', Georgia, serif;
+      --body-serif: 'Source Serif 4', Georgia, serif;
+      --sans: 'DM Sans', -apple-system, sans-serif;
+      --ink: #1a1a1a;
+      --paper: #faf9f6;
+      --accent: #c41e3a;
+      --accent-dark: #9a1830;
+      --gray-100: #f5f4f1;
+      --gray-200: #e8e6e1;
+      --gray-300: #d4d1ca;
+      --gray-500: #8a8780;
+      --gray-600: #6b6862;
+      --gray-700: #4a4844;
+      --blue-link: #1a5276;
+      --rule: #c8c5bd;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--body-serif);
+      font-size: 19px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* === TOP BAR === */
+    .top-bar {
+      background: var(--ink);
+      color: white;
+      font-family: var(--sans);
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 8px 0;
+      text-align: center;
+    }
+    .top-bar span { opacity: 0.7; }
+    .top-bar strong { opacity: 1; color: #f0c040; }
+
+    /* === MASTHEAD === */
+    .masthead {
+      border-bottom: 3px double var(--rule);
+      padding: 20px 0 16px;
+      text-align: center;
+    }
+    .masthead-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    .masthead-section {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .masthead-brand {
+      font-family: var(--serif);
+      font-size: 14px;
+      color: var(--gray-500);
+      font-style: italic;
+    }
+    .masthead-date {
+      font-family: var(--sans);
+      font-size: 12px;
+      color: var(--gray-500);
+      margin-top: 4px;
+    }
+
+    /* === ARTICLE === */
+    .article-container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* === HERO === */
+    .hero {
+      padding: 48px 0 40px;
+      border-bottom: 1px solid var(--gray-200);
+      margin-bottom: 36px;
+    }
+    .hero .kicker {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+      display: inline-block;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 2px;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 800;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+    .hero .deck {
+      font-family: var(--body-serif);
+      font-size: 21px;
+      line-height: 1.55;
+      color: var(--gray-600);
+      font-weight: 300;
+      font-style: italic;
+    }
+
+    /* === BYLINE === */
+    .byline-block {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 0;
+      border-top: 1px solid var(--gray-200);
+      border-bottom: 1px solid var(--gray-200);
+      margin-bottom: 36px;
+      font-family: var(--sans);
+    }
+    .byline-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gray-200), var(--gray-300));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+      color: var(--gray-600);
+      flex-shrink: 0;
+    }
+    .byline-info { line-height: 1.4; }
+    .byline-name {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--ink);
+    }
+    .byline-title {
+      font-size: 12px;
+      color: var(--gray-500);
+    }
+    .byline-meta {
+      margin-left: auto;
+      text-align: right;
+      font-size: 12px;
+      color: var(--gray-500);
+    }
+    .byline-meta .read-time { 
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* === BODY TEXT === */
+    .article-body p {
+      margin-bottom: 24px;
+    }
+    .article-body p.lede {
+      font-size: 22px;
+      line-height: 1.65;
+      color: var(--gray-700);
+    }
+    .article-body p.lede::first-letter {
+      font-family: var(--serif);
+      font-size: 64px;
+      float: left;
+      line-height: 0.8;
+      margin: 6px 10px 0 0;
+      color: var(--accent);
+      font-weight: 800;
+    }
+    .article-body strong {
+      font-weight: 600;
+    }
+
+    /* === PULL QUOTE === */
+    .pull-quote {
+      margin: 48px -40px;
+      padding: 36px 40px;
+      border-left: 4px solid var(--accent);
+      background: var(--gray-100);
+      position: relative;
+    }
+    .pull-quote blockquote {
+      font-family: var(--serif);
+      font-size: 24px;
+      line-height: 1.45;
+      font-style: italic;
+      color: var(--ink);
+      margin-bottom: 12px;
+    }
+    .pull-quote cite {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-style: normal;
+      color: var(--gray-500);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+
+    /* === STATS BAR === */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      margin: 48px 0;
+      border: 1px solid var(--gray-200);
+      background: white;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 28px 16px;
+      border-right: 1px solid var(--gray-200);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: var(--serif);
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--accent);
+      line-height: 1.1;
+    }
+    .stat-label {
+      font-family: var(--sans);
+      font-size: 12px;
+      color: var(--gray-500);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
+    /* === SUBHEADS === */
+    .article-body h2 {
+      font-family: var(--serif);
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin: 48px 0 20px;
+      color: var(--ink);
+    }
+    .article-body h3 {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 40px 0 16px;
+    }
+
+    /* === INLINE CALLOUT === */
+    .inline-callout {
+      background: linear-gradient(135deg, #fef9f0, #fdf4e7);
+      border: 1px solid #e8d5b8;
+      border-radius: 2px;
+      padding: 24px 28px;
+      margin: 36px 0;
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--gray-700);
+    }
+    .inline-callout strong {
+      color: var(--ink);
+    }
+
+    /* === IMAGE FIGURE === */
+    .article-figure {
+      margin: 40px -60px;
+      position: relative;
+    }
+    .article-figure .figure-img {
+      width: 100%;
+      height: 400px;
+      background: linear-gradient(145deg, #e8ddd0 0%, #d4c8b8 40%, #c9bfb2 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-figure .figure-img::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b8a998' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .figure-placeholder {
+      font-family: var(--sans);
+      font-size: 13px;
+      color: #8a7e70;
+      text-align: center;
+      z-index: 1;
+      padding: 20px;
+    }
+    .figure-placeholder .icon {
+      font-size: 48px;
+      margin-bottom: 8px;
+      opacity: 0.5;
+    }
+    .article-figure figcaption {
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--gray-500);
+      padding: 10px 60px 0;
+      line-height: 1.5;
+    }
+    .article-figure figcaption .credit {
+      text-transform: uppercase;
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+      color: var(--gray-300);
+    }
+
+    /* === HOW IT WORKS SECTION === */
+    .how-it-works {
+      margin: 48px 0;
+      padding: 40px 36px;
+      background: white;
+      border: 1px solid var(--gray-200);
+    }
+    .how-it-works h3 {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .step-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .step {
+      text-align: center;
+      padding: 0 8px;
+    }
+    .step-num {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: white;
+      font-family: var(--serif);
+      font-size: 20px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+    }
+    .step-title {
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 15px;
+      margin-bottom: 6px;
+      color: var(--ink);
+    }
+    .step-desc {
+      font-family: var(--sans);
+      font-size: 13px;
+      color: var(--gray-600);
+      line-height: 1.55;
+    }
+
+    /* === CTA MODULE === */
+    .cta-module {
+      margin: 56px -60px;
+      padding: 48px 60px;
+      background: var(--ink);
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-module::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(ellipse at 30% 50%, rgba(196, 30, 58, 0.15), transparent 60%);
+      pointer-events: none;
+    }
+    .cta-module .cta-eyebrow {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 12px;
+      position: relative;
+    }
+    .cta-module h3 {
+      font-family: var(--serif);
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.25;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .cta-module .cta-sub {
+      font-family: var(--body-serif);
+      font-size: 17px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+      max-width: 500px;
+      margin: 0 auto 28px;
+      position: relative;
+    }
+    .cta-btn {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: white;
+      background: var(--accent);
+      padding: 16px 40px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      position: relative;
+    }
+    .cta-btn:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(196, 30, 58, 0.4);
+    }
+    .cta-fine {
+      font-family: var(--sans);
+      font-size: 12px;
+      color: rgba(255,255,255,0.4);
+      margin-top: 16px;
+      position: relative;
+    }
+
+    /* === RELATED ARTICLES SECTION === */
+    .related-section {
+      margin: 48px 0;
+      padding-top: 36px;
+      border-top: 3px double var(--rule);
+    }
+    .related-section h4 {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gray-500);
+      margin-bottom: 20px;
+    }
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .related-card {
+      border: 1px solid var(--gray-200);
+      padding: 20px;
+      background: white;
+      transition: border-color 0.2s;
+    }
+    .related-card:hover { border-color: var(--accent); cursor: pointer; }
+    .related-card .card-tag {
+      font-family: var(--sans);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .related-card h5 {
+      font-family: var(--serif);
+      font-size: 17px;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--ink);
+    }
+
+    /* === FOOTER === */
+    .article-footer {
+      margin-top: 48px;
+      padding: 32px 0;
+      border-top: 1px solid var(--gray-200);
+      font-family: var(--sans);
+      font-size: 12px;
+      color: var(--gray-500);
+      text-align: center;
+    }
+    .article-footer .disclosure {
+      font-style: italic;
+      color: var(--gray-300);
+      margin-top: 8px;
+      font-size: 11px;
+    }
+
+    /* === SHARE BAR (floating) === */
+    .share-bar {
+      position: fixed;
+      left: calc(50% - 420px);
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 100;
+    }
+    .share-dot {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--gray-200);
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      cursor: pointer;
+      transition: all 0.2s;
+      color: var(--gray-500);
+    }
+    .share-dot:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: scale(1.1);
+    }
+
+    /* === PROGRESS BAR === */
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      background: var(--accent);
+      z-index: 9999;
+      width: 0%;
+      transition: width 0.1s linear;
+    }
+
+    /* === ANIMATIONS === */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 860px) {
+      .share-bar { display: none; }
+      .article-figure { margin: 32px -24px; }
+      .article-figure figcaption { padding: 10px 24px 0; }
+      .cta-module { margin: 48px -24px; padding: 40px 24px; }
+      .pull-quote { margin: 36px 0; padding: 24px; }
+    }
+    @media (max-width: 640px) {
+      body { font-size: 17px; }
+      .hero h1 { font-size: 28px; }
+      .hero .deck { font-size: 18px; }
+      .stats-bar { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid var(--gray-200); }
+      .stat-item:last-child { border-bottom: none; }
+      .step-grid { grid-template-columns: 1fr; gap: 28px; }
+      .related-grid { grid-template-columns: 1fr; }
+      .byline-meta { display: none; }
+      .article-figure .figure-img { height: 260px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Progress Bar -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <span>Sponsored Health Feature</span> &nbsp;·&nbsp; <strong>Paid Partnership</strong>
+  </div>
+
+  <!-- Masthead -->
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="masthead-section">Health &amp; Wellness Desk</div>
+      <div class="masthead-brand">The American Health Report</div>
+      <div class="masthead-date">Published February 25, 2026 &nbsp;·&nbsp; Updated 3 hours ago</div>
+    </div>
+  </header>
+
+  <!-- Share Bar -->
+  <div class="share-bar">
+    <div class="share-dot" title="Share on Facebook">f</div>
+    <div class="share-dot" title="Share on X">𝕏</div>
+    <div class="share-dot" title="Email">✉</div>
+    <div class="share-dot" title="Save">🔖</div>
+  </div>
+
+  <!-- Article Container -->
+  <div class="article-container">
+
+    <!-- Hero -->
+    <div class="hero fade-in">
+      <span class="kicker">Allergy Breakthrough</span>
+      <h1>Millions of Americans Are Quietly Ditching Allergy Shots for Drops That Arrive at Their Door</h1>
+      <p class="deck">A century-old treatment, reimagined for the telehealth era, is helping patients retrain their immune systems from their kitchen counter — and allergists say it could reshape how America treats allergies forever.</p>
+    </div>
+
+    <!-- Byline -->
+    <div class="byline-block fade-in">
+      <div class="byline-avatar">DR</div>
+      <div class="byline-info">
+        <div class="byline-name">Dr. Rebecca Thornton</div>
+        <div class="byline-title">Health & Medicine Correspondent</div>
+      </div>
+      <div class="byline-meta">
+        <div>Feb 25, 2026</div>
+        <div class="read-time">7 min read</div>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="article-body">
+
+      <p class="lede fade-in">For the 80 million Americans who spend each spring locked in a losing battle against their own immune systems — eyes streaming, sinuses throbbing, medicine cabinets overflowing with antihistamines that barely dull the misery — a quiet revolution has been building in allergy medicine. And most of them have no idea it exists.</p>
+
+      <p class="fade-in">It's called <strong>sublingual immunotherapy</strong>, or SLIT — tiny drops placed under the tongue daily that do something no Zyrtec or Claritin ever could: they don't just mask allergy symptoms. They <em>reprogram the immune system</em> to stop overreacting to allergens in the first place.</p>
+
+      <p class="fade-in">The concept isn't new. European allergists have prescribed sublingual drops for decades, and the World Health Organization endorsed the approach as a viable alternative to traditional allergy shots back in 1998. But in the United States, a combination of insurance politics, pharma economics, and the sheer inertia of the medical establishment kept it on the margins — until now.</p>
+
+      <!-- Stats Bar -->
+      <div class="stats-bar fade-in">
+        <div class="stat-item">
+          <div class="stat-number">80M+</div>
+          <div class="stat-label">Americans with<br>nasal allergies</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">340%</div>
+          <div class="stat-label">Growth in SLIT<br>prescriptions since 2020</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">82%</div>
+          <div class="stat-label">Patients reporting<br>significant improvement</div>
+        </div>
+      </div>
+
+      <p class="fade-in">A new generation of telehealth companies has taken this clinically proven, WHO-endorsed treatment and made it radically accessible. Patients now consult board-certified allergists via video, receive custom-formulated drops shipped to their home, and treat their allergies daily in under 30 seconds — no weekly office visits, no needles, no co-pays stacking up like cord wood.</p>
+
+      <p class="fade-in">The growth has been explosive. Industry data shows prescriptions for sublingual immunotherapy have surged 340% since 2020, driven largely by telehealth platforms and a post-pandemic generation of patients who expect healthcare to come to them.</p>
+
+      <h2 class="fade-in">The Problem With Everything in Your Medicine Cabinet</h2>
+
+      <p class="fade-in">To understand why immunotherapy drops are gaining ground so fast, you have to understand what they're replacing — and why the status quo was never good enough.</p>
+
+      <p class="fade-in">Antihistamines like cetirizine and loratadine are what allergists call "Band-Aid medicine." They block histamine receptors to temporarily reduce symptoms, but the moment you stop taking them, you're right back where you started. They treat the sneeze, not the sneezer. Nasal sprays work similarly — suppressing inflammation without addressing the root immune dysfunction that causes it.</p>
+
+      <!-- Figure -->
+      <figure class="article-figure fade-in">
+        <div class="figure-img">
+          <div class="figure-placeholder">
+            <div class="icon">💧</div>
+            <div>[Hero product image or lifestyle photo of sublingual drops]</div>
+          </div>
+        </div>
+        <figcaption>
+          Sublingual immunotherapy drops are placed under the tongue daily, gradually training the immune system to tolerate environmental allergens.
+          <span class="credit">Photo: [Brand Name]</span>
+        </figcaption>
+      </figure>
+
+      <p class="fade-in">Then there are allergy shots — subcutaneous immunotherapy, or SCIT — which <em>do</em> address the root cause. They work. But the protocol is punishing: typically 1–2 injections per week for the first 3–7 months, then monthly maintenance shots for 3–5 years. Each visit requires 30 minutes of post-injection monitoring in case of anaphylaxis. For a working parent or anyone without the luxury of a flexible schedule, that's hundreds of hours lost to waiting rooms.</p>
+
+      <p class="fade-in">"The efficacy of injection immunotherapy was never the problem," says Dr. Miriam Chen, an allergist-immunologist at Stanford Medical Center. "The problem was compliance. We'd start patients on a course of shots and watch 60–70% of them drop out before completing treatment. Life gets in the way."</p>
+
+      <!-- Pull Quote -->
+      <div class="pull-quote fade-in">
+        <blockquote>"We are watching a fundamental shift in how Americans access immunotherapy. The clinical science was always there — what changed is the delivery model."</blockquote>
+        <cite>— Dr. Miriam Chen, Allergist-Immunologist, Stanford Medical Center</cite>
+      </div>
+
+      <h2 class="fade-in">How Drops Under the Tongue Can Retrain Your Immune System</h2>
+
+      <p class="fade-in">Sublingual immunotherapy works on the same principle as allergy shots — controlled, repeated exposure to tiny amounts of the substances your body overreacts to — but the delivery mechanism is different and, crucially, far more convenient.</p>
+
+      <p class="fade-in">Custom-formulated drops are placed under the tongue, where a dense network of immune cells called Langerhans cells reside in the oral mucosa. These cells act as gatekeepers, sampling whatever passes through and presenting it to the broader immune system. Over time, daily microdoses of allergen extracts teach these cells — and the T-cells they communicate with — to recognize pollen, dust mites, pet dander, and mold as harmless rather than threatening.</p>
+
+      <p class="fade-in">The result is a gradual but profound recalibration. Instead of mounting an inflammatory response every time you encounter grass pollen, your immune system learns to stand down. It's not suppression. It's re-education.</p>
+
+      <div class="inline-callout fade-in">
+        <strong>The clinical evidence:</strong> A 2023 meta-analysis published in the <em>Journal of Allergy and Clinical Immunology</em> reviewed 98 randomized controlled trials and confirmed that sublingual immunotherapy significantly reduces both symptom severity and medication use across allergic rhinitis, with a safety profile substantially better than injection-based approaches.
+      </div>
+
+      <!-- How It Works Box -->
+      <div class="how-it-works fade-in">
+        <h3>How It Works: From Consultation to Relief</h3>
+        <div class="step-grid">
+          <div class="step">
+            <div class="step-num">1</div>
+            <div class="step-title">Online Consultation</div>
+            <div class="step-desc">A board-certified allergist reviews your symptoms, history, and allergy test results via a secure video visit.</div>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <div class="step-title">Custom Formulation</div>
+            <div class="step-desc">Your drops are compounded to target your specific allergen profile — not a one-size-fits-all tablet.</div>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <div class="step-title">Daily Drops at Home</div>
+            <div class="step-desc">Place drops under your tongue each morning. 30 seconds. No injections, no office visits, no disruption.</div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="fade-in">Why Telehealth Changed Everything</h2>
+
+      <p class="fade-in">The convergence of two forces made this moment possible. First, sublingual immunotherapy's safety profile — far lower risk of anaphylaxis compared to injections — means it doesn't require in-office administration or 30-minute monitoring periods. The FDA's recognition of this safety distinction opened the door for at-home use under physician supervision.</p>
+
+      <p class="fade-in">Second, the telehealth boom triggered by COVID-19 didn't just change patient expectations — it rewired the regulatory landscape. Expanded telehealth prescribing authority, combined with consumer demand for remote healthcare, created the infrastructure for allergy treatment to finally leave the clinic.</p>
+
+      <p class="fade-in">The result: a treatment that was once buried in allergist offices is now available to anyone with a smartphone and a mailbox. Early movers in the space are reporting patient completion rates above 80% — roughly double the adherence rate of traditional allergy shots.</p>
+
+      <h3 class="fade-in">The Numbers Tell the Story</h3>
+
+      <p class="fade-in">The American College of Allergy, Asthma, and Immunology estimates that only 5% of allergy sufferers currently pursue any form of immunotherapy — meaning 95% are still trapped in the cycle of symptom management. Industry analysts project the U.S. sublingual immunotherapy market will exceed $3.8 billion by 2028, driven almost entirely by direct-to-patient telehealth platforms.</p>
+
+      <p class="fade-in">"We're looking at one of the largest underserved markets in American healthcare," says Dr. James Whitfield, an immunology researcher at Johns Hopkins. "Tens of millions of people who could benefit from disease-modifying treatment are stuck buying Claritin. The access gap is closing, and it's closing fast."</p>
+
+      <h2 class="fade-in">What Patients Are Saying</h2>
+
+      <p class="fade-in">For Sarah K., a 34-year-old marketing director in Austin, Texas, the shift was life-changing. "I'd been on Zyrtec every single day for twelve years," she says. "Within four months of starting sublingual drops, I noticed I could go outside in March without wanting to claw my eyes out. By month eight, I was off antihistamines completely for the first time since college."</p>
+
+      <p class="fade-in">Michael T., a 41-year-old father of three in Connecticut, had tried allergy shots twice and quit both times. "With three kids, who has time to sit in a doctor's office twice a week? The drops take me 20 seconds while I'm making coffee. I actually finished a full year of treatment for the first time in my life."</p>
+
+      <!-- CTA Module -->
+      <div class="cta-module fade-in">
+        <div class="cta-eyebrow">Limited Availability</div>
+        <h3>Find Out If Sublingual Immunotherapy<br>Is Right for You</h3>
+        <p class="cta-sub">Take a 60-second assessment and get matched with a board-certified allergist — no insurance needed, no waiting rooms, no needles.</p>
+        <a href="#" class="cta-btn">Take the Free Assessment →</a>
+        <div class="cta-fine">Consultations available in all 50 states &nbsp;·&nbsp; HSA/FSA eligible</div>
+      </div>
+
+      <h2 class="fade-in">The Road Ahead</h2>
+
+      <p class="fade-in">The medical establishment is paying attention. The American Academy of Allergy, Asthma & Immunology updated its practice parameters in 2024 to include sublingual immunotherapy as an appropriate first-line treatment for allergic rhinitis in both adults and children — a significant shift from its historical preference for injection-based protocols.</p>
+
+      <p class="fade-in">Researchers at multiple academic medical centers are now studying sublingual approaches for food allergies, a potentially transformative application that could affect the estimated 32 million Americans with food-related immune conditions.</p>
+
+      <p class="fade-in">For the millions currently white-knuckling through allergy season with a pharmacy bag of temporary fixes, the message from the medical community is increasingly clear: there is a better option, it's backed by decades of clinical evidence, and it no longer requires you to rearrange your life to access it.</p>
+
+      <p class="fade-in">The drops are here. The question is whether the rest of American healthcare is ready to catch up.</p>
+
+      <!-- Related Articles -->
+      <div class="related-section fade-in">
+        <h4>Related Stories</h4>
+        <div class="related-grid">
+          <div class="related-card">
+            <div class="card-tag">Immunology</div>
+            <h5>Why Allergists Say 2026 Is the Year Immunotherapy Goes Mainstream</h5>
+          </div>
+          <div class="related-card">
+            <div class="card-tag">Telehealth</div>
+            <h5>Inside the Boom: How At-Home Treatments Are Disrupting $28B Allergy Industry</h5>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="article-footer">
+      <div>© 2026 The American Health Report. All rights reserved.</div>
+      <div class="disclosure">This article is a sponsored health feature produced in partnership with [Brand Name]. Content reviewed by board-certified allergists. This is not a substitute for professional medical advice.</div>
+    </footer>
+
+  </div>
+
+  <script>
+    // Progress bar
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (scrollTop / docHeight) * 100;
+      document.getElementById('progressBar').style.width = progress + '%';
+    });
+
+    // Scroll-triggered fade-in
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
