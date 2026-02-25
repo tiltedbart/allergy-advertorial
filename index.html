@@ -292,7 +292,7 @@
     .article-figure .figure-img {
       width: 100%;
       height: 400px;
-      background: linear-gradient(145deg, #e8ddd0 0%, #d4c8b8 40%, #c9bfb2 100%);
+      background: url('hero.png') center center / cover no-repeat;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -303,7 +303,7 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23b8a998' fill-opacity='0.15'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      background: none;
     }
     .figure-placeholder {
       font-family: var(--sans);
@@ -687,15 +687,10 @@
 
       <!-- Figure -->
       <figure class="article-figure fade-in">
-        <div class="figure-img">
-          <div class="figure-placeholder">
-            <div class="icon">💧</div>
-            <div>[Hero product image or lifestyle photo of sublingual drops]</div>
-          </div>
-        </div>
+        <div class="figure-img"></div>
         <figcaption>
           Sublingual immunotherapy drops are placed under the tongue daily, gradually training the immune system to tolerate environmental allergens.
-          <span class="credit">Photo: [Brand Name]</span>
+          <span class="credit">Photo: Curex</span>
         </figcaption>
       </figure>
 
@@ -768,7 +763,7 @@
         <div class="cta-eyebrow">Limited Availability</div>
         <h3>Find Out If Sublingual Immunotherapy<br>Is Right for You</h3>
         <p class="cta-sub">Take a 60-second assessment and get matched with a board-certified allergist — no insurance needed, no waiting rooms, no needles.</p>
-        <a href="#" class="cta-btn">Take the Free Assessment →</a>
+        <a href="https://getcurex.com/quiz" class="cta-btn">Take the Free Assessment →</a>
         <div class="cta-fine">Consultations available in all 50 states &nbsp;·&nbsp; HSA/FSA eligible</div>
       </div>
 
@@ -802,7 +797,7 @@
     <!-- Footer -->
     <footer class="article-footer">
       <div>© 2026 The American Health Report. All rights reserved.</div>
-      <div class="disclosure">This article is a sponsored health feature produced in partnership with [Brand Name]. Content reviewed by board-certified allergists. This is not a substitute for professional medical advice.</div>
+      <div class="disclosure">This article is a sponsored health feature produced in partnership with Curex. Content reviewed by board-certified allergists. This is not a substitute for professional medical advice.</div>
     </footer>
 
   </div>
